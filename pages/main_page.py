@@ -39,3 +39,15 @@ class MainPage:
 	def click_configure_button(self):
 		element = get_element(self, self.locators.CONFIGURE_BUTTON)
 		element.click()
+
+	def click_login_by_vk(self):
+		element = get_element(self, self.locators.LOGIN_BY_VK)
+		element.click()
+
+	def click_profile_triangle(self):
+		element = get_element(self, self.locators.PROFILE_TRIANGLE)
+		element.click()
+
+	def click_logout_button(self):
+		element = get_element(self, self.locators.LOGOUT_BUTTON)
+		element.click()

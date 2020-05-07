@@ -29,4 +29,13 @@ class MainPageLocators:
 			'Реклама и контакты')
 		self.CONFIGURE_BUTTON = (
 			By.CLASS_NAME,
-			'subsites_tune_widget__button') 
+			'subsites_tune_widget__button')
+		self.LOGIN_BY_VK = (
+			By.XPATH,
+			'//*[@class="social-auth__button"]')
+		self.PROFILE_TRIANGLE = (
+			By.CLASS_NAME,
+			'possession_triangle')
+		self.LOGOUT_BUTTON = (
+			By.PARTIAL_LINK_TEXT,
+			'Выход')
