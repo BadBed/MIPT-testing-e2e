@@ -1,12 +1,16 @@
 from locators.locators import MainPageLocators
 from functions import get_element
+from selenium.webdriver.common.keys import Keys
+
 
 class MainPage:
-	def __init__(self, driver, wait):
+	def __init__(self, driver, wait, load_page=True):
 		self.driver = driver
 		self.wait = wait
-		self.driver.get('https://tjournal.ru')
 		self.locators = MainPageLocators()
+
+		if load_page:
+			self.driver.get('https://tjournal.ru')
 
 	def click_login_button(self):
 		element = get_element(self, self.locators.LOGIN_BUTTON)
@@ -50,4 +54,24 @@ class MainPage:
 
 	def click_logout_button(self):
 		element = get_element(self, self.locators.LOGOUT_BUTTON)
+		element.click()
+
+	def click_login_by_mail(self):
+		element = get_element(self, self.locators.LOGIN_BY_MAIL)
+		element.click()
+
+	def write_mail(self, text):
+		element = get_element(self, self.locators.MAIL_INPUT, True)
+		element.clear()
+		element.send_keys(text)
+		element.send_keys(Keys.RETURN)
+
+	def write_pass(self, text):
+		element = get_element(self, self.locators.PASS_INPUT, True)
+		element.clear()
+		element.send_keys(text)
+		element.send_keys(Keys.RETURN)
+
+	def finish_login_by_mail(self):
+		element = get_element(self, self.locators.SEND_MAILPASS_BUTTON)
 		element.click()

@@ -39,3 +39,28 @@ class MainPageLocators:
 		self.LOGOUT_BUTTON = (
 			By.PARTIAL_LINK_TEXT,
 			'Выход')
+		self.LOGIN_BY_MAIL = (
+			By.PARTIAL_LINK_TEXT,
+			'Через почту')
+		self.MAIL_INPUT = (
+			By.XPATH,
+			'//input[@type="email"]')
+		self.PASS_INPUT = (
+			By.XPATH,
+			'//input[@type="password"]')
+		self.SEND_MAILPASS_BUTTON = (
+			By.XPATH,
+			'//input[@type="submit"]')
+
+
+class VKLoginPageLocators:
+	def __init__(self):
+		self.LOGIN_INPUT = (
+			By.XPATH,
+			'//input[@name="email"]')
+		self.PASSWORD_INPUT = (
+			By.XPATH,
+			'//input[@name="pass"]')
+		self.LOGIN_BUTTON = (
+			By.CLASS_NAME,
+			'oauth_button')
